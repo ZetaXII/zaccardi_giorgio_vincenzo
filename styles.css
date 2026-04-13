@@ -1,0 +1,821 @@
+/* --- IMPOSTAZIONI GLOBALI E VARIABILI COLORE --- */
+:root {
+    --colore-primario: #001d3d;
+    /* Blu Scuro Logo */
+    --colore-secondario: #34be62;
+    /* Verde Logo */
+    --colore-testo: #333;
+    --colore-sfondo: #f4f4f4;
+    --colore-bianco: #ffffff;
+    --gap-carosello: 20px;
+    --num-elementi-visibili: 5;
+}
+
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* FONT INTER APPLICATO */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--colore-testo);
+    background-color: var(--colore-bianco);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--colore-primario);
+    margin-bottom: 15px;
+    font-weight: 700;
+    /* Titoli più spessi */
+}
+
+section .container>p {
+    width: 100%;
+    text-align: left !important;
+}
+
+h2 i,
+h4 i {
+    color: var(--colore-secondario);
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--colore-secondario);
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    text-align: left;
+    display: block;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+p {
+    margin-bottom: 15px;
+    font-weight: 400;
+    /* Paragrafi leggibili */
+}
+
+section {
+    padding: 60px 0;
+}
+
+section:nth-child(even) {
+    background-color: var(--colore-sfondo);
+}
+
+/* --- HEADER, HERO, SERVIZI --- */
+
+header {
+    background: var(--colore-primario);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* RIDOTTO IL PADDING PER NON AVERE UNA NAVBAR TROPPO ALTA */
+    padding: 10px 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--colore-bianco);
+    text-decoration: none;
+    z-index: 1001;
+    transition: color 0s, opacity 0s;
+}
+
+.logo-text {
+    color: var(--colore-bianco);
+}
+
+.navbar-logo {
+    height: 120px;
+    /* ALTEZZA ICONA/LOGO IMPOSTATA A 120PX */
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--colore-bianco);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    display: block;
+}
+
+nav a:hover {
+    color: var(--colore-secondario);
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--colore-bianco);
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0s;
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    display: none;
+}
+
+#hero {
+    /* SOSTITUZIONE SFONDO CON GIF */
+    background: linear-gradient(rgba(0, 29, 61, 0.7), rgba(0, 29, 61, 0.7)), url('https://affordablesprinklerswichita.com/wp-content/uploads/2017/02/AffordableSprinkler_BackgroundVideo_Compilation_01.gif') no-repeat center center/cover;
+    color: var(--colore-bianco);
+    min-height: 60vh;
+    height: auto;
+    padding: 160px 20px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero .hero-logo {
+    height: clamp(180px, 18vw, 250px);
+    width: auto;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
+#hero h1 {
+    color: var(--colore-bianco);
+    font-size: 3.5rem;
+    margin-bottom: 0px;
+}
+
+#hero h3 {
+    color: var(--colore-secondario);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.cta-button {
+    background: var(--colore-secondario);
+    color: var(--colore-bianco);
+    padding: clamp(8px, 2vw, 15px) clamp(16px, 4vw, 30px);
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 700;
+    /* CTA button spesso */
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #2a9a4f;
+    transform: translateY(-3px);
+}
+
+/* DESKTOP: Immagine a destra, Testo a sinistra (Ordine naturale) */
+.chi-sono-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#chi-sono .profilo-testo {
+    flex: 2;
+}
+
+#chi-sono .profilo-img {
+    flex: 1;
+    text-align: center;
+}
+
+#chi-sono .profilo-img img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid var(--colore-bianco);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.servizio-card {
+    background: var(--colore-bianco);
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.servizio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.servizio-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.servizio-card-content {
+    padding: 25px;
+}
+
+.servizio-card-content h4 {
+    color: var(--colore-primario);
+    margin-top: 0;
+}
+
+.servizio-card-content p {
+    margin-bottom: 0;
+}
+
+
+/* --- SEZIONE CONTATTI --- */
+
+#contatti .container {
+    text-align: left;
+}
+
+.contatti-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contatti-col {
+    background: var(--colore-sfondo);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-weight: 500;
+}
+
+.contatti-col h4 {
+    color: var(--colore-secondario);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--colore-primario);
+    padding-bottom: 5px;
+    text-align: left;
+    font-weight: 700;
+}
+
+/* Stili per dettaglio contatto (Telefono, Email, Area) */
+.contatto-dettaglio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contatto-dettaglio i {
+    font-size: 1.5rem;
+    color: var(--colore-primario);
+    margin-right: 15px;
+    min-width: 20px;
+}
+
+/* TESTO IMPORTANTE: Telefono, Email e Area di copertura */
+.contatto-dettaglio a,
+.contatto-dettaglio p {
+    text-decoration: none;
+    color: var(--colore-testo);
+    font-weight: 700;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+/* === MODIFICHE PER MOBILE E USABILITÀ === */
+.contatto-dettaglio a {
+    /* Rimuove la sottolineatura di default del browser (la gestiamo noi) */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s, text-decoration 0.3s;
+    cursor: pointer;
+    /* Colore e sottolineatura SEMPRE attivi per chiarezza su mobile */
+    color: var(--colore-secondario) !important;
+    /* Forza il colore verde per distinguerlo subito */
+    text-decoration: underline;
+    /* Sempre sottolineato */
+}
+
+.contatto-dettaglio a:hover {
+    /* Al passaggio del mouse (desktop) cambia colore e toglie la sottolineatura */
+    color: var(--colore-primario) !important;
+    /* Diventa blu scuro al passaggio del mouse (desktop) */
+    text-decoration: none;
+    /* Rimuove la sottolineatura in hover, lasciando solo il colore */
+}
+
+/* ======================================= */
+
+.contatti-dati-unificati .area-copertura {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+/* Nuova regola per rendere il paragrafo area-copertura uguale all'ultimo paragrafo degli orari */
+.contatti-dati-unificati .area-copertura .contatto-dettaglio p {
+    margin: 0;
+    font-size: 0.9rem !important;
+    /* Forza la dimensione a 0.9rem */
+    font-weight: 400 !important;
+    /* Forza il peso normale */
+    color: var(--colore-testo) !important;
+    /* Forza il colore del testo standard */
+}
+
+/* ORARI DI LAVORO */
+.orari-lavoro p:not(:last-child) {
+    display: none;
+}
+
+.orari-lavoro ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 0;
+}
+
+.orari-lavoro li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orari-lavoro .giorno {
+    font-weight: 700;
+    color: var(--colore-primario);
+}
+
+/* Garantisce che anche l'orario effettivo sia 700 */
+.orari-lavoro li>*:not(.giorno) {
+    font-weight: 700;
+    color: var(--colore-testo);
+}
+
+/* Testo piccolo in fondo agli orari (base per l'uniformità) */
+.orari-lavoro p:last-child {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* FINE MODIFICHE SEZIONE CONTATTI */
+
+
+/* --- FOOTER AGGIORNATO --- */
+
+footer {
+    background: var(--colore-primario);
+    /* Sfondo blu scuro */
+    color: var(--colore-bianco);
+    /* Testo bianco */
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--colore-bianco);
+    /* Forza il colore del testo */
+}
+
+/* --- GALLERIA (invariata) --- */
+
+#galleria {
+    background-color: var(--colore-sfondo);
+}
+
+.galleria-wrapper {
+    position: relative;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.galleria-grid {
+    display: flex;
+    gap: var(--gap-carosello);
+    transition: transform 0.5s ease-in-out;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.galleria-item {
+    min-width: calc((100% - (var(--gap-carosello) * (var(--num-elementi-visibili) - 1))) / var(--num-elementi-visibili));
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.galleria-item:hover {
+    transform: scale(1.05);
+}
+
+.galleria-item img,
+.galleria-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carosello-controllo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carosello-controllo:hover {
+    opacity: 1;
+}
+
+.carosello-controllo.prev {
+    left: 5px;
+}
+
+.carosello-controllo.next {
+    right: 5px;
+}
+
+.carosello-controllo:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-media-container {
+    max-width: 90%;
+    max-height: 90%;
+    background: var(--colore-bianco);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-media-container img,
+.lightbox-media-container video {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    object-fit: contain;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    color: var(--colore-secondario);
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 2001;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: background 0.3s, opacity 0.3s;
+}
+
+.lightbox-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-nav-btn.prev {
+    left: 20px;
+}
+
+.lightbox-nav-btn.next {
+    right: 20px;
+}
+
+.lightbox-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.contatti-col {
+    width: 100%;
+    min-width: 0;
+}
+
+.contatto-dettaglio a {
+    word-break: break-word;
+}
+
+/* --- RESPONSIVE DESIGN (Mobile) --- */
+@media (max-width: 768px) {
+    :root {
+        --num-elementi-visibili: 2;
+    }
+
+    .galleria-item {
+        min-width: calc((100% - (var(--gap-carosello) * (var(--num-elementi-visibili) - 1))) / var(--num-elementi-visibili));
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    header .container {
+        padding: 10px 5%;
+        justify-content: space-between;
+    }
+
+    .navbar-logo {
+        height: 70px;
+        /* RIDIMENSIONATO SU MOBILE */
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .mobile-menu.open~.logo .logo-text,
+    .mobile-menu.open~.hamburger-menu+.logo .logo-text {
+        color: var(--colore-primario);
+        transition: color 0s;
+    }
+
+    .hamburger-menu {
+        display: block;
+        color: var(--colore-bianco);
+    }
+
+    .mobile-menu.open~.hamburger-menu,
+    .hamburger-menu[aria-expanded="true"] {
+        color: var(--colore-primario) !important;
+        transition: color 0s;
+    }
+
+    .hamburger-menu i {
+        color: inherit;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul li:not(:last-child) {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    nav.mobile-menu {
+        background: rgba(255, 255, 255, 0.98);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.mobile-menu.open {
+        transform: translateX(0);
+    }
+
+    nav.mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav.mobile-menu li {
+        margin: 20px 0;
+    }
+
+    nav.mobile-menu a {
+        font-size: 1.8rem;
+        color: var(--colore-primario);
+        font-weight: 700;
+    }
+
+    #hero .hero-logo {
+        margin-bottom: 0;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+
+    #hero h3 {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    /* MOBILE: Immagine PRIMA del Testo (Column Reverse) */
+    .chi-sono-content-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .contatto-dettaglio {
+        font-size: 1rem;
+    }
+
+    .logo {
+        gap: 5px;
+    }
+
+    .lightbox-close {
+        font-size: 25px;
+        top: 5px;
+        right: 10px;
+    }
+
+    .lightbox-media-container {
+        max-width: 95%;
+        max-height: 95%;
+        padding: 10px;
+    }
+
+    .lightbox-media-container img,
+    .lightbox-media-container video {
+        max-height: 70vh;
+    }
+
+    .lightbox-nav-btn {
+        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .lightbox-nav-btn.prev {
+        left: 10px;
+        right: auto;
+    }
+
+    .lightbox-nav-btn.next {
+        right: 10px;
+        left: auto;
+    }
+
+    .contatti-wrapper {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
