@@ -1,6 +1,6 @@
 // --- CONFIGURAZIONE ---
 const NUMERO_MAX_IMMAGINI = 55;
-const NUMERO_MAX_VIDEO = 2;
+const NUMERO_MAX_VIDEO = 1;
 const ELEMENTI_PER_BLOCCO = 5;
 const BASE_PATH = "images/foto_lavori/";
 
