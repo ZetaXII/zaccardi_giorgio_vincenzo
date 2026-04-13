@@ -159,6 +159,10 @@ nav a:hover {
     color: var(--colore-secondario);
 }
 
+.container a {
+    color: var(--colore-secondario);
+}
+
 /* Menu Hamburger */
 .hamburger-menu {
     display: none;
