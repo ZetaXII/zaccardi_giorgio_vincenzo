@@ -386,14 +386,14 @@ nav a:hover {
 
 /* ======================================= */
 
-.contatti-dati-unificati .area-copertura {
+.card-info {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    /* border-top: 1px dashed rgba(0, 0, 0, 0.2); */
 }
 
-/* Nuova regola per rendere il paragrafo area-copertura uguale all'ultimo paragrafo degli orari */
-.contatti-dati-unificati .area-copertura .contatto-dettaglio p {
+/* Nuova regola per rendere il paragrafo card-info uguale all'ultimo paragrafo degli orari */
+.card-info .contatto-dettaglio p {
     margin: 0;
     font-size: 0.9rem !important;
     /* Forza la dimensione a 0.9rem */
@@ -404,9 +404,6 @@ nav a:hover {
 }
 
 /* ORARI DI LAVORO */
-.orari-lavoro p:not(:last-child) {
-    display: none;
-}
 
 .orari-lavoro ul {
     list-style: none;
@@ -432,13 +429,6 @@ nav a:hover {
 .orari-lavoro li>*:not(.giorno) {
     font-weight: 700;
     color: var(--colore-testo);
-}
-
-/* Testo piccolo in fondo agli orari (base per l'uniformità) */
-.orari-lavoro p:last-child {
-    margin-top: 25px;
-    font-size: 0.9rem;
-    font-weight: 400;
 }
 
 /* FINE MODIFICHE SEZIONE CONTATTI */
